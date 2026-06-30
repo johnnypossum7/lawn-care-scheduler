@@ -147,8 +147,7 @@ def generate_schedule(data):
     today = date.today()
     weeks = 4
     try:
-        weeks = int(input("\nGenerate schedule for how many weeks ahead? [4]: ").strip() or "4")
-        weeks = max(1, weeks)
+        weeks = int(input(f"\nGenerate schedule for how many weeks ahead? [4]: ").strip() or "4")
     except ValueError:
         weeks = 4
 
