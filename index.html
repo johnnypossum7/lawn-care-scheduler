@@ -465,7 +465,7 @@ tr:hover td{background:var(--surface-1)}
         <div class="field"><label>Full name</label><input type="text" id="su-fname" placeholder="Jane Smith"></div><input type="hidden" id="su-lname" value="">
         <div class="field"><label>Business name</label><input type="text" id="su-biz" placeholder="Acme Services"></div>
         <div class="field"><label>Email</label><input type="email" id="su-email" placeholder="business@example.com"></div>
-        <div class="field"><label>Phone</label><input type="tel" id="su-phone" placeholder="(865) 555-0100"></div>
+        <div class="field"><label>Phone</label><input type="tel" id="su-phone" placeholder="(555) 000-0000"></div>
         <div class="field"><label>Password</label><input type="password" placeholder="Min. 8 characters"></div>
         <button class="sub-btn" onclick="signupStep(2)">Continue</button>
         <div class="signin-note">Already have an account? <span onclick="go('s-signin')">Sign in</span></div>
@@ -588,8 +588,8 @@ tr:hover td{background:var(--surface-1)}
     <div class="page-sub">Fill in the details, then hand the device to your customer to review and sign.</div>
     <div class="card"><div class="card-title"><i class="ti ti-user" aria-hidden="true"></i> Customer info</div>
       <div class="two-col"><div class="field"><label>First name</label><input type="text" id="e-fname" placeholder="Sarah"></div><div class="field"><label>Last name</label><input type="text" id="e-lname" placeholder="Mitchell"></div></div>
-      <div class="field"><label>Service address</label><input type="text" id="e-addr" placeholder="142 Maple Dr, Knoxville TN 37901"></div>
-      <div class="two-col"><div class="field"><label>Phone</label><input type="tel" id="e-phone" placeholder="(865) 555-0100"></div><div class="field"><label>Email</label><input type="email" id="e-email" placeholder="sarah@email.com"></div></div>
+      <div class="field"><label>Service address</label><input type="text" id="e-addr" placeholder="111 Example Road, City ST 00000"></div>
+      <div class="two-col"><div class="field"><label>Phone</label><input type="tel" id="e-phone" placeholder="(555) 000-0000"></div><div class="field"><label>Email</label><input type="email" id="e-email" placeholder="client@example.com"></div></div>
     </div>
     <div class="card"><div class="card-title"><i class="ti ti-tool" aria-hidden="true"></i> Service details</div>
       <div class="two-col">
@@ -632,7 +632,7 @@ tr:hover td{background:var(--surface-1)}
         <p><strong style="color:var(--text-primary)">Liability.</strong> The provider carries general liability insurance and is not responsible for pre-existing damage or conditions outside their control.</p>
         <p>By signing below, you confirm you have read, understood, and agree to these terms.</p>
       </div>
-      <div class="field" style="margin-bottom:12px"><label>Your email (we'll send you a copy + invoice)</label><input type="email" id="sig-email" placeholder="sarah@email.com"></div>
+      <div class="field" style="margin-bottom:12px"><label>Your email (we'll send you a copy + invoice)</label><input type="email" id="sig-email" placeholder="client@example.com"></div>
       <label style="font-size:12px;font-weight:500;color:var(--text-secondary);display:block;margin-bottom:6px">Signature</label>
       <div class="sig-area"><canvas class="sig-canvas" id="sig-canvas" aria-label="Draw your signature"></canvas><div class="sig-placeholder" id="sig-placeholder"><i class="ti ti-pencil" aria-hidden="true"></i>Draw your signature here</div></div>
       <div class="sig-actions"><span style="font-size:12px;color:var(--text-muted)" id="sig-status">Not yet signed</span><button class="btn sm" onclick="clearSig()"><i class="ti ti-refresh" aria-hidden="true"></i> Clear</button></div>
