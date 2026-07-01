@@ -727,6 +727,12 @@ tr:hover td{background:var(--surface-1)}
 <div class="drawer" id="customer-drawer">
   <div class="drawer-hdr"><span class="drawer-title">Customer details</span><button class="drawer-close" onclick="closeDrawer()"><i class="ti ti-x"></i></button></div>
   <div id="drawer-content"></div>
+
+<div class="drawer-overlay" id="crew-drawer-overlay" onclick="closeCrewDrawer()"></div>
+<div class="drawer" id="crew-drawer">
+  <div class="drawer-hdr"><span class="drawer-title">Crew leader</span><button class="drawer-close" onclick="closeCrewDrawer()"><i class="ti ti-x"></i></button></div>
+  <div id="crew-drawer-content"></div>
+</div>
 </div>
 
 <!-- PIN OVERLAY -->
@@ -1042,16 +1048,54 @@ function renderCrewMgmt(){
   const grid=document.getElementById('crew-grid');
   if(!crewOnly.length){grid.innerHTML='<div class="empty-state" style="grid-column:span 2"><i class="ti ti-users-group" aria-hidden="true"></i>No crew leaders yet. Add one to get started.</div>';return;}
   grid.innerHTML=crewOnly.map(c=>{
-    const todayCount=state.jobs.filter(j=>j.crewId===c.id&&j.date===todayStr&&j.status!=='rescheduled').length;
-    const total=state.jobs.filter(j=>j.crewId===c.id).length;
-    return `<div class="crew-card">
+    const cJobs=state.jobs.filter(j=>j.crewId===c.id&&j.status!=='rescheduled');
+    const todayCount=cJobs.filter(j=>j.date===todayStr).length;
+    const paid=cJobs.filter(j=>j.paid).reduce((s,j)=>s+j.amount,0);
+    const unpaid=cJobs.filter(j=>!j.paid).reduce((s,j)=>s+j.amount,0);
+    return `<div class="crew-card" onclick="openCrewDrawer(${c.id})" style="cursor:pointer">
       <div class="crew-card-top"><div class="crew-card-avatar" style="background:${c.color}">${initials(c.name)}</div><div><div class="crew-card-name">${c.name}</div><div class="crew-card-pin">PIN: ${'•'.repeat(c.pin.length)}</div></div></div>
       <div class="crew-card-stat"><i class="ti ti-sun" style="font-size:12px"></i> ${todayCount} job${todayCount!==1?'s':''} today</div>
-      <div class="crew-card-stat"><i class="ti ti-clipboard-list" style="font-size:12px"></i> ${total} total jobs</div>
-      <button class="crew-del" onclick="deleteCrew(${c.id})"><i class="ti ti-trash" style="font-size:12px"></i> Remove</button>
+      <div class="crew-card-stat" style="color:var(--text-success)"><i class="ti ti-circle-check" style="font-size:12px"></i> $${paid.toFixed(2)} paid</div>
+      <div class="crew-card-stat" style="color:var(--text-danger)"><i class="ti ti-clock" style="font-size:12px"></i> $${unpaid.toFixed(2)} unpaid</div>
+      <button class="crew-del" onclick="event.stopPropagation();deleteCrew(${c.id})"><i class="ti ti-trash" style="font-size:12px"></i> Remove</button>
     </div>`;
   }).join('');
 }
+
+function openCrewDrawer(id){
+  const c=state.crew.find(x=>x.id===id);if(!c)return;
+  const cJobs=state.jobs.filter(j=>j.crewId===id&&j.status!=='rescheduled').sort((a,b)=>b.date.localeCompare(a.date));
+  const paid=cJobs.filter(j=>j.paid).reduce((s,j)=>s+j.amount,0);
+  const unpaid=cJobs.filter(j=>!j.paid).reduce((s,j)=>s+j.amount,0);
+  const complete=cJobs.filter(j=>j.status==='complete').length;
+  const jobsHtml=cJobs.slice(0,10).map(j=>{
+    const cust=getC(j.customerId);
+    const badge=j.paid?'<span class="pill paid" style="font-size:10px">Paid</span>':'<span class="pill unpaid" style="font-size:10px">Unpaid</span>';
+    return `<div class="mini-job"><span style="color:var(--text-secondary);flex-shrink:0">${j.date}</span><span style="flex:1;padding:0 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${cust.name||'—'}</span><span style="flex-shrink:0">$${j.amount.toFixed(2)}</span>${badge}</div>`;
+  }).join('')||'<div style="font-size:12px;color:var(--text-muted);padding:8px 0">No jobs yet</div>';
+  document.getElementById('crew-drawer-content').innerHTML=`
+    <div class="drawer-avatar" style="background:${c.color}">${initials(c.name)}</div>
+    <div class="drawer-name">${c.name}</div>
+    <div class="drawer-sub"><i class="ti ti-shield-lock" style="font-size:12px;vertical-align:-1px"></i> PIN: ${'•'.repeat(c.pin.length)}</div>
+    <div class="total-box">
+      <div><div class="lbl">Total paid</div><div class="val" style="color:var(--text-success)">$${paid.toFixed(2)}</div></div>
+      <div style="text-align:right"><div class="lbl">Balance due</div><div class="val ${unpaid>0?'bal-red':'bal-ok'}">$${unpaid.toFixed(2)}</div></div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Summary</div>
+      <div class="detail-row"><span class="detail-label">Total jobs</span><span style="font-weight:500">${cJobs.length}</span></div>
+      <div class="detail-row"><span class="detail-label">Completed</span><span style="font-weight:500">${complete}</span></div>
+      <div class="detail-row"><span class="detail-label">Today's jobs</span><span style="font-weight:500">${cJobs.filter(j=>j.date===todayStr).length}</span></div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Recent jobs</div>
+      ${jobsHtml}
+    </div>
+    <button class="drawer-del" onclick="closeCrewDrawer();deleteCrew(${c.id})"><i class="ti ti-trash" style="font-size:12px;vertical-align:-1px"></i> Remove crew leader</button>`;
+  document.getElementById('crew-drawer-overlay').classList.add('open');
+  document.getElementById('crew-drawer').classList.add('open');
+}
+function closeCrewDrawer(){document.getElementById('crew-drawer-overlay').classList.remove('open');document.getElementById('crew-drawer').classList.remove('open');}
 function deleteCrew(id){state.crew=state.crew.filter(c=>c.id!==id);state.jobs.forEach(j=>{if(j.crewId===id)j.crewId=null;});renderCrewMgmt();renderProfileGrid();}
 
 /* RAINCHECK */
