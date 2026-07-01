@@ -479,13 +479,10 @@ tr:hover td{background:var(--surface-1)}
         <div class="back-link"><span onclick="signupStep(1)">← Back</span></div>
       </div>
       <div id="sp3" style="display:none">
-        <div class="s-title">Payment details</div>
-        <div class="s-sub">Secured by Stripe. You won't be charged today.</div>
-        <div class="trial-note"><i class="ti ti-calendar" style="font-size:14px" aria-hidden="true"></i> Free until your trial ends</div>
-        <div class="field"><label>Cardholder name</label><input type="text" placeholder="Jane Smith"></div>
-        <div class="card-wrap"><i class="ti ti-credit-card" aria-hidden="true"></i><input type="text" placeholder="Card number"></div>
-        <div class="card-two"><input type="text" placeholder="MM / YY"><input type="text" placeholder="CVC"></div>
-        <div class="secure"><i class="ti ti-lock" style="font-size:12px" aria-hidden="true"></i> Secured by Stripe. We never store your card details.</div>
+        <div class="s-title">You're all set!</div>
+        <div class="s-sub">Your 14-day free trial starts today. No credit card required.</div>
+        <div class="trial-note"><i class="ti ti-calendar" style="font-size:14px" aria-hidden="true"></i> Trial ends in 14 days — billing info collected at that time</div>
+        <div style="background:var(--bg-success);border-radius:var(--radius);padding:14px;margin-bottom:16px;font-size:13px;color:var(--text-success);display:flex;align-items:center;gap:10px"><i class="ti ti-circle-check" style="font-size:18px;flex-shrink:0"></i><span>Full access to all features during your trial. We'll remind you before it ends.</span></div>
         <button class="sub-btn" onclick="completeSignup()">Start my free trial →</button>
         <div class="back-link"><span onclick="signupStep(2)">← Back</span></div>
       </div>
