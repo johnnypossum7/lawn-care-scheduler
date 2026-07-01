@@ -462,9 +462,9 @@ tr:hover td{background:var(--surface-1)}
         <div class="s-title">Create your account</div>
         <div class="s-sub">Get started free — no credit card needed</div>
         <div class="trial-note"><i class="ti ti-gift" style="font-size:14px" aria-hidden="true"></i> 14-day free trial on all plans</div>
-        <div class="two-col"><div class="field"><label>First name</label><input type="text" id="su-fname" placeholder="Alex"></div><div class="field"><label>Last name</label><input type="text" id="su-lname" placeholder="Lawson"></div></div>
-        <div class="field"><label>Business name</label><input type="text" id="su-biz" placeholder="Your Business Name"></div>
-        <div class="field"><label>Email</label><input type="email" id="su-email" placeholder="you@example.com"></div>
+        <div class="two-col"><div class="field"><label>First name</label><input type="text" id="su-fname" placeholder="Jane"></div><div class="field"><label>Last name</label><input type="text" id="su-lname" placeholder="Smith"></div></div>
+        <div class="field"><label>Business name</label><input type="text" id="su-biz" placeholder="Acme Services"></div>
+        <div class="field"><label>Email</label><input type="email" id="su-email" placeholder="business@example.com"></div>
         <div class="field"><label>Phone</label><input type="tel" id="su-phone" placeholder="(865) 555-0100"></div>
         <div class="field"><label>Password</label><input type="password" placeholder="Min. 8 characters"></div>
         <button class="sub-btn" onclick="signupStep(2)">Continue</button>
@@ -482,7 +482,7 @@ tr:hover td{background:var(--surface-1)}
         <div class="s-title">Payment details</div>
         <div class="s-sub">Secured by Stripe. You won't be charged today.</div>
         <div class="trial-note"><i class="ti ti-calendar" style="font-size:14px" aria-hidden="true"></i> Free until your trial ends</div>
-        <div class="field"><label>Cardholder name</label><input type="text" placeholder="Your Name"></div>
+        <div class="field"><label>Cardholder name</label><input type="text" placeholder="Jane Smith"></div>
         <div class="card-wrap"><i class="ti ti-credit-card" aria-hidden="true"></i><input type="text" placeholder="Card number"></div>
         <div class="card-two"><input type="text" placeholder="MM / YY"><input type="text" placeholder="CVC"></div>
         <div class="secure"><i class="ti ti-lock" style="font-size:12px" aria-hidden="true"></i> Secured by Stripe. We never store your card details.</div>
@@ -500,7 +500,7 @@ tr:hover td{background:var(--surface-1)}
     <div class="signup-box">
       <div class="s-title">Welcome back</div>
       <div class="s-sub">Sign in to your JobOptima account</div>
-      <div class="field"><label>Email</label><input type="email" placeholder="you@example.com"></div>
+      <div class="field"><label>Email</label><input type="email" placeholder="business@example.com"></div>
       <div class="field"><label>Password</label><input type="password" placeholder="Your password"></div>
       <button class="sub-btn" onclick="launchApp()">Sign in</button>
       <div class="signin-note">Don't have an account? <span onclick="go('s-signup')">Start free trial</span></div>
@@ -764,10 +764,10 @@ let sigHasMark=false;
 let isDrawing=false;
 let lastX=0,lastY=0;
 let jobFilter='all';
-let bizName='Your Business';
+let bizName='My Business';
 
 let state={
-  crew:[{id:1,name:'Owner',pin:'1234',role:'owner',color:COLORS[0]}],
+  crew:[{id:1,name:'My Name (Owner)',pin:'1234',role:'owner',color:COLORS[0]}],
   customers:[],
   jobs:[],
   estimates:[],
@@ -810,7 +810,7 @@ function pickPlan(p){
 }
 
 function completeSignup(){
-  const fname=document.getElementById('su-fname').value.trim()||'Owner';
+  const fname=document.getElementById('su-fname').value.trim()||'My Name';
   const biz=document.getElementById('su-biz').value.trim()||'My Business';
   bizName=biz;
   state.crew[0].name=fname+' (Owner)';
