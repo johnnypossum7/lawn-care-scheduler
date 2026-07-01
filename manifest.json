@@ -1,7 +1,7 @@
 {
-  "name": "CutSheet",
-  "short_name": "CutSheet",
-  "description": "Lawn care scheduling, crew management, estimates and invoicing",
+  "name": "JobOptima",
+  "short_name": "JobOptima",
+  "description": "Field service scheduling, crew management, estimates and invoicing",
   "start_url": "/index.html",
   "display": "standalone",
   "orientation": "portrait",

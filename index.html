@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="CutSheet">
+  <meta name="apple-mobile-web-app-title" content="JobOptima">
   <meta name="theme-color" content="#3b82f6">
-  <title>CutSheet</title>
+  <title>JobOptima</title>
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-192.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -412,21 +412,21 @@ tr:hover td{background:var(--surface-1)}
 .filter-btn.active{background:var(--bg-accent);color:var(--text-accent);border-color:var(--border-accent)}
 </style>
 
-<h2 class="sr-only">CutSheet — complete field service scheduling app from signup to invoicing</h2>
+<h2 class="sr-only">JobOptima — complete field service scheduling app from signup to invoicing</h2>
 
 <!-- LANDING -->
 <div class="screen active" id="s-landing">
   <div class="nav">
-    <div class="logo" onclick="go('s-landing')"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div>
+    <div class="logo" onclick="go('s-landing')"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div>
     <div class="nav-right">
       <button class="btn sm" onclick="go('s-signin')">Sign in</button>
       <button class="btn primary sm" onclick="go('s-signup')">Start free trial</button>
     </div>
   </div>
   <div class="hero">
-    <div class="hero-badge"><i class="ti ti-scissors" style="font-size:12px" aria-hidden="true"></i> Built for field service teams</div>
+    <div class="hero-badge"><i class="ti ti-bolt" style="font-size:12px" aria-hidden="true"></i> Built for field service teams</div>
     <div class="hero-title">Run your crew.<br>Get paid. <span>Stay organized.</span></div>
-    <div class="hero-sub">CutSheet is the all-in-one scheduling app for lawn care, cleaning, pest control, and any recurring field service business.</div>
+    <div class="hero-sub">JobOptima is the all-in-one scheduling app for lawn care, cleaning, pest control, and any recurring field service business.</div>
     <div class="hero-btns">
       <button class="btn primary" onclick="go('s-signup')">Start your free 14-day trial</button>
       <button class="btn" onclick="scrollPricing()">See pricing</button>
@@ -454,7 +454,7 @@ tr:hover td{background:var(--surface-1)}
 
 <!-- SIGNUP -->
 <div class="screen" id="s-signup">
-  <div class="nav"><div class="logo" onclick="go('s-landing')"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div></div>
+  <div class="nav"><div class="logo" onclick="go('s-landing')"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div></div>
   <div class="signup-wrap">
     <div class="signup-box">
       <div class="steps"><div class="step-dot active" id="sd1">1</div><div class="step-line" id="sl1"></div><div class="step-dot pending" id="sd2">2</div><div class="step-line" id="sl2"></div><div class="step-dot pending" id="sd3">3</div></div>
@@ -462,9 +462,9 @@ tr:hover td{background:var(--surface-1)}
         <div class="s-title">Create your account</div>
         <div class="s-sub">Get started free — no credit card needed</div>
         <div class="trial-note"><i class="ti ti-gift" style="font-size:14px" aria-hidden="true"></i> 14-day free trial on all plans</div>
-        <div class="two-col"><div class="field"><label>First name</label><input type="text" id="su-fname" placeholder="Tommy"></div><div class="field"><label>Last name</label><input type="text" id="su-lname" placeholder="Lawson"></div></div>
-        <div class="field"><label>Business name</label><input type="text" id="su-biz" placeholder="Tommy's Lawn Care"></div>
-        <div class="field"><label>Email</label><input type="email" id="su-email" placeholder="tommy@example.com"></div>
+        <div class="two-col"><div class="field"><label>First name</label><input type="text" id="su-fname" placeholder="Alex"></div><div class="field"><label>Last name</label><input type="text" id="su-lname" placeholder="Lawson"></div></div>
+        <div class="field"><label>Business name</label><input type="text" id="su-biz" placeholder="Your Business Name"></div>
+        <div class="field"><label>Email</label><input type="email" id="su-email" placeholder="you@example.com"></div>
         <div class="field"><label>Phone</label><input type="tel" id="su-phone" placeholder="(865) 555-0100"></div>
         <div class="field"><label>Password</label><input type="password" placeholder="Min. 8 characters"></div>
         <button class="sub-btn" onclick="signupStep(2)">Continue</button>
@@ -482,7 +482,7 @@ tr:hover td{background:var(--surface-1)}
         <div class="s-title">Payment details</div>
         <div class="s-sub">Secured by Stripe. You won't be charged today.</div>
         <div class="trial-note"><i class="ti ti-calendar" style="font-size:14px" aria-hidden="true"></i> Free until your trial ends</div>
-        <div class="field"><label>Cardholder name</label><input type="text" placeholder="Tommy Lawson"></div>
+        <div class="field"><label>Cardholder name</label><input type="text" placeholder="Your Name"></div>
         <div class="card-wrap"><i class="ti ti-credit-card" aria-hidden="true"></i><input type="text" placeholder="Card number"></div>
         <div class="card-two"><input type="text" placeholder="MM / YY"><input type="text" placeholder="CVC"></div>
         <div class="secure"><i class="ti ti-lock" style="font-size:12px" aria-hidden="true"></i> Secured by Stripe. We never store your card details.</div>
@@ -495,12 +495,12 @@ tr:hover td{background:var(--surface-1)}
 
 <!-- SIGNIN -->
 <div class="screen" id="s-signin">
-  <div class="nav"><div class="logo" onclick="go('s-landing')"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div></div>
+  <div class="nav"><div class="logo" onclick="go('s-landing')"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div></div>
   <div class="signup-wrap">
     <div class="signup-box">
       <div class="s-title">Welcome back</div>
-      <div class="s-sub">Sign in to your CutSheet account</div>
-      <div class="field"><label>Email</label><input type="email" placeholder="tommy@example.com"></div>
+      <div class="s-sub">Sign in to your JobOptima account</div>
+      <div class="field"><label>Email</label><input type="email" placeholder="you@example.com"></div>
       <div class="field"><label>Password</label><input type="password" placeholder="Your password"></div>
       <button class="sub-btn" onclick="launchApp()">Sign in</button>
       <div class="signin-note">Don't have an account? <span onclick="go('s-signup')">Start free trial</span></div>
@@ -510,9 +510,9 @@ tr:hover td{background:var(--surface-1)}
 
 <!-- LOGIN (profile select) -->
 <div class="screen" id="s-login">
-  <div class="nav"><div class="logo"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div></div>
+  <div class="nav"><div class="logo"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div></div>
   <div class="login-screen-inner">
-    <div class="login-logo"><i class="ti ti-scissors" style="color:#fff;font-size:24px" aria-hidden="true"></i></div>
+    <div class="login-logo" style="background:none"><svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="52" rx="14" fill="#0f172a"/><circle cx="14" cy="38" r="4.5" stroke="#38bdf8" stroke-width="2.5"/><circle cx="38" cy="14" r="4.5" stroke="#38bdf8" stroke-width="2.5"/><path d="M18 34Q26 24 34 18" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3 2.5"/><path d="M20 29L26 35L36 22" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div style="font-size:18px;font-weight:500;margin-bottom:4px">Welcome back</div>
     <div style="font-size:13px;color:var(--text-muted);margin-bottom:24px">Select your profile to continue</div>
     <div class="profile-grid" id="profile-grid"></div>
@@ -522,7 +522,7 @@ tr:hover td{background:var(--surface-1)}
 <!-- APP SHELL -->
 <div class="screen" id="s-app">
   <div class="nav">
-    <div class="logo" onclick="go('s-login')"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div>
+    <div class="logo" onclick="go('s-login')"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div>
     <div class="nav-right">
       <span class="mode-badge" id="app-badge">Owner</span>
       <button class="btn sm" onclick="go('s-login')"><i class="ti ti-logout" aria-hidden="true"></i> Sign out</button>
@@ -582,7 +582,7 @@ tr:hover td{background:var(--surface-1)}
 
 <!-- ESTIMATE BUILD -->
 <div class="screen" id="s-estimate-build">
-  <div class="nav"><div class="logo" onclick="returnToApp('estimates')"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div><div class="nav-right"><button class="btn sm" onclick="returnToApp('estimates')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Back</button></div></div>
+  <div class="nav"><div class="logo" onclick="returnToApp('estimates')"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div><div class="nav-right"><button class="btn sm" onclick="returnToApp('estimates')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Back</button></div></div>
   <div class="content">
     <div class="page-title">New estimate</div>
     <div class="page-sub">Fill in the details, then hand the device to your customer to review and sign.</div>
@@ -615,7 +615,7 @@ tr:hover td{background:var(--surface-1)}
 
 <!-- ESTIMATE PREVIEW / SIGN -->
 <div class="screen" id="s-estimate-sign">
-  <div class="nav"><div class="logo"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div><div class="nav-right"><button class="btn sm" onclick="go('s-estimate-build')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Edit</button></div></div>
+  <div class="nav"><div class="logo"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div><div class="nav-right"><button class="btn sm" onclick="go('s-estimate-build')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Edit</button></div></div>
   <div class="content">
     <div class="page-title">Review and sign</div>
     <div class="page-sub">Review the estimate below, then sign to confirm your agreement. An invoice and copy will be emailed to you.</div>
@@ -643,7 +643,7 @@ tr:hover td{background:var(--surface-1)}
 
 <!-- SIGNED SUCCESS -->
 <div class="screen" id="s-signed">
-  <div class="nav"><div class="logo" onclick="returnToApp('estimates')"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div></div>
+  <div class="nav"><div class="logo" onclick="returnToApp('estimates')"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div></div>
   <div class="content">
     <div class="success-wrap">
       <div class="success-circle"><i class="ti ti-check" aria-hidden="true"></i></div>
@@ -664,7 +664,7 @@ tr:hover td{background:var(--surface-1)}
 
 <!-- INVOICE DETAIL -->
 <div class="screen" id="s-invoice-detail">
-  <div class="nav"><div class="logo" onclick="returnToApp('invoices')"><div class="logo-icon"><i class="ti ti-scissors" aria-hidden="true"></i></div><span class="logo-name">Cut<span>Sheet</span></span></div><div class="nav-right"><button class="btn sm" onclick="returnToApp('invoices')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Back</button></div></div>
+  <div class="nav"><div class="logo" onclick="returnToApp('invoices')"><div class="logo-icon" style="background:none;padding:0"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#0f172a"/><circle cx="7" cy="19" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><circle cx="19" cy="7" r="2.2" stroke="#38bdf8" stroke-width="1.5"/><path d="M9 17.5Q13 12 17 9" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1.5"/><path d="M10 14.5L13 17.5L18 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="logo-name">Job<span>Optima</span></span></div><div class="nav-right"><button class="btn sm" onclick="returnToApp('invoices')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Back</button></div></div>
   <div class="content">
     <div class="page-title">Invoice</div>
     <div class="auto-banner"><i class="ti ti-bolt" aria-hidden="true"></i><div><div class="txt">Auto-generated on signing</div><div class="sub">Created automatically when the customer signed the estimate.</div></div></div>
@@ -764,10 +764,10 @@ let sigHasMark=false;
 let isDrawing=false;
 let lastX=0,lastY=0;
 let jobFilter='all';
-let bizName='Tommy\'s Lawn Care';
+let bizName='Your Business';
 
 let state={
-  crew:[{id:1,name:'Tommy (Owner)',pin:'1234',role:'owner',color:COLORS[0]}],
+  crew:[{id:1,name:'Owner',pin:'1234',role:'owner',color:COLORS[0]}],
   customers:[],
   jobs:[],
   estimates:[],
@@ -810,8 +810,8 @@ function pickPlan(p){
 }
 
 function completeSignup(){
-  const fname=document.getElementById('su-fname').value.trim()||'Tommy';
-  const biz=document.getElementById('su-biz').value.trim()||'Tommy\'s Lawn Care';
+  const fname=document.getElementById('su-fname').value.trim()||'Owner';
+  const biz=document.getElementById('su-biz').value.trim()||'My Business';
   bizName=biz;
   state.crew[0].name=fname+' (Owner)';
   launchApp();
